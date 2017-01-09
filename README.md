@@ -1,5 +1,10 @@
 # gradle-gretty-jacoco-issue
 
+* Gradle 3.3
+* Gretty 1.4.0
+* Jacoco plugin applied
+
+```
 $ ./gradlew clean appRun
 :clean
 :prepareInplaceWebAppFolder UP-TO-DATE
@@ -23,8 +28,10 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 BUILD FAILED
 
 Total time: 0.935 secs
+```
 
 Relevant stacktrace:
+```
 Caused by: java.lang.NullPointerException
         at org.gradle.testing.jacoco.plugins.JacocoPluginExtension.applyTo(JacocoPluginExtension.java:104)
         at org.gradle.testing.jacoco.plugins.JacocoPluginExtension$applyTo.call(Unknown Source)
@@ -37,3 +44,4 @@ Caused by: java.lang.NullPointerException
         at org.akhikhl.gretty.StartBaseTask.getLauncherConfig(StartBaseTask.groovy:141)
         at org.akhikhl.gretty.StartBaseTask.action(StartBaseTask.groovy:39)
         at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:73)
+```
